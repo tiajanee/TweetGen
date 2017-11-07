@@ -2,7 +2,7 @@
 import re
 import random
  
- 
+#takes a hard-coded word list and counts the instances of each unique word 
 def histogram(word_list):
     search = re.compile('\w+')
     histogram = {}  
@@ -18,21 +18,24 @@ def histogram(word_list):
  
     return histogram
  
- 
+#counts the # of unique words in a given word list
 def unique_words(histogram):
      return len(histogram.keys())
  
- 
+#when this function is called, it will print the instances for a particular word 
 def frequency(word, histogram):
     if word not in histogram:
          return 0
     
     return histogram[word]
 
+#generates a random word from the histogram
 def random_word(histogram):       
 
     rand_word =  random.choice(list(histogram.keys()))
     return rand_word
+
+#insert SS here
 
 # def weighted_freq(histogram, word_list):
     
@@ -45,10 +48,14 @@ def random_word(histogram):
 #             print(word)
  
 if __name__ == "__main__":
+    #hard-coded text file
     text_file = open('practice_text.txt')
+    #splits words in file into lines and make the all lower case for the unique_words() function
     text_word_list = [word.lower() for word in text_file.read().rsplit()]
+    #saves histogram in a variable
     text_histogram = histogram(text_word_list)
 
+    #print statement test to make sure it works
     print('Histogram:\t', text_histogram, '\n\n')
     print('Num of Unique_Words:\t', unique_words(text_histogram), '\n')
     print('"and" occurs:\t', frequency('and', text_histogram), 'times \n')
