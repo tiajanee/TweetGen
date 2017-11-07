@@ -10,3 +10,5 @@ def lol():
 	text_histogram = histogram.histogram(text_word_list)
 	return histogram.random_word(text_histogram)
 
+if __name__ == '__main__':
+    app.run(debug=True, use_reloader=True)
