@@ -33,11 +33,10 @@ def frequency(word, histogram):
 def random_word(histogram):       
 
     rand_word =  random.choice(list(histogram.keys()))
-    rand_number = random.rand_int(0, len(histogram))
-    rand_sentence = " "
-    while i < rand_number:
-        rand_sentence += random_word
-    return rand_sentence
+    #rand_number = random.randint(0, 15))
+        #for i in range(rand_number):
+        #rand_sentence += (rand_word)
+    return rand_word
 
 
 #insert SS here
@@ -59,13 +58,26 @@ if __name__ == "__main__":
     text_word_list = [word.lower() for word in text_file.read().rsplit()]
     #saves histogram in a variable
     text_histogram = histogram(text_word_list)
+    
+    rand_number = random.randint(0, 15)
+    rand_sentence = " "
+
+    for i in range(rand_number):
+        if i == rand_number - 1:
+            rand_sentence += (random_word(text_histogram) + ".")
+        else:
+            rand_sentence += (random_word(text_histogram) + " ")
+    print (rand_sentence)
+    
+
 
     #print statement test to make sure it works
-    print('Histogram:\t', text_histogram, '\n\n')
-    print('Num of Unique_Words:\t', unique_words(text_histogram), '\n')
-    print('"and" occurs:\t', frequency('and', text_histogram), 'times \n')
-    print('"red" occurs:\t', frequency('red', text_histogram), 'times \n')
-    print('"he" occurs:\t', frequency('he', text_histogram), 'times \n')
-    print("A random word from this histogram is", random_word(text_histogram))
-    print("Another random word from this histogram is", random_word(text_histogram))
+    #print('Histogram:\t', text_histogram, '\n\n')
+#print('Num of Unique_Words:\t', unique_words(text_histogram), '\n')
+#print('"and" occurs:\t', frequency('and', text_histogram), 'times \n')
+#print('"red" occurs:\t', frequency('red', text_histogram), 'times \n')
+#print('"he" occurs:\t', frequency('he', text_histogram), 'times \n')
+#print("A random word from this histogram is", random_word(text_histogram))
+#print("Another random word from this histogram is", random_word(text_histogram))
+
     #print("This is a weighted random word", weighted_freq(text_histogram, text_word_list))
