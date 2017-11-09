@@ -33,7 +33,12 @@ def frequency(word, histogram):
 def random_word(histogram):       
 
     rand_word =  random.choice(list(histogram.keys()))
-    return rand_word
+    rand_number = random.rand_int(0, len(histogram))
+    rand_sentence = " "
+    while i < rand_number:
+        rand_sentence += random_word
+    return rand_sentence
+
 
 #insert SS here
 
