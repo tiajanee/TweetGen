@@ -48,7 +48,7 @@ def random_word(histogram):
 #             print(word)
  
 if __name__ == "__main__":
-    #hard-coded text file
+    #hard-coded text file !!!!#make a fucntion that takes a file name argument
     text_file = open('practice_text.txt')
     #splits words in file into lines and make the all lower case for the unique_words() function
     text_word_list = [word.lower() for word in text_file.read().rsplit()]

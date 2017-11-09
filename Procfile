@@ -1,1 +1,1 @@
-web: flask run $PORT
+web: unicorn app:app
