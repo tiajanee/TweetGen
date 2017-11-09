@@ -59,16 +59,7 @@ if __name__ == "__main__":
     #saves histogram in a variable
     text_histogram = histogram(text_word_list)
     
-    rand_number = random.randint(0, 15)
-    rand_sentence = " "
 
-    for i in range(rand_number):
-        if i == rand_number - 1:
-            rand_sentence += (random_word(text_histogram) + ".")
-        else:
-            rand_sentence += (random_word(text_histogram) + " ")
-    print (rand_sentence)
-    
 
 
     #print statement test to make sure it works
