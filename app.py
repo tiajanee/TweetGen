@@ -15,9 +15,9 @@ def lol():
   rand_sentence = " "
   for i in range(rand_number):
     if i == rand_number - 1:
-      rand_sentence += (random_word(text_histogram) + ".")
+      rand_sentence += (histogram.random_word(text_histogram) + ".")
     else:
-      rand_sentence += (random_word(text_histogram) + " ")
+      rand_sentence += (histogram.random_word(text_histogram) + " ")
       print (rand_sentence)
   return histogram.weighted_freq(text_word_list)
 
