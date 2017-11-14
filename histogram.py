@@ -1,7 +1,8 @@
 
+from __future__ import division
 import re
 import random
- 
+
 #takes a hard-coded word list and counts the instances of each unique word 
 def histogram(word_list):
     search = re.compile('\w+')
@@ -42,10 +43,13 @@ def weighted_freq(word_list):
 #gives the frequency percentage of the words in decimal form
     wf_dict = {}
     sum_values = sum(histogram(word_list).values())
+    print(sum_values)
     for word in word_list:
         word_count = word_list.count(word)
         dec_weighted_word_count = word_count / sum_values
+        #print(dec_weighted_word_count)
         percent_weighted_word_count = dec_weighted_word_count * 100
+        #print(percent_weighted_word_count)
         wf_dict[word] = percent_weighted_word_count
     return wf_dict
 
@@ -61,8 +65,9 @@ if __name__ == "__main__":
     #splits words in file into lines and make the all lower case for the unique_words() function
     text_word_list = [word.lower() for word in text_file.read().rsplit()]
     #saves histogram in a variable
-    text_histogram = histogram(text_word_list)
-    print(text_histogram)
+    #text_histogram = histogram(text_word_list)
+    #print(text_histogram)
+    #print(text_word_list)
 
     text_weighted_freq = weighted_freq(text_word_list)
     print(text_weighted_freq)
@@ -79,7 +84,7 @@ if __name__ == "__main__":
 #print('"and" occurs:\t', frequency('and', text_histogram), 'times \n')
 #print('"red" occurs:\t', frequency('red', text_histogram), 'times \n')
 #print('"he" occurs:\t', frequency('he', text_histogram), 'times \n')
-print("A random word from this histogram is", random_word(text_histogram))
+    #print("A random word from this histogram is", random_word(text_histogram))
 #print("Another random word from this histogram is", random_word(text_histogram))
 
 #print("This is a weighted random word", weighted_freq(text_histogram, text_word_list))
