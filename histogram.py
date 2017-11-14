@@ -38,28 +38,22 @@ def random_word(histogram):
         #rand_sentence += (rand_word)
     return rand_word
 
-
-#insert SS here
-
-# def weighted_freq(histogram, word_list):
-    
-#     word_weight = histogram.keys() / (sum(word_list))
-#     rand_int = random.randrange(0,1)
-#     for word in histogram:
-#         if word_weight < rand_int:
-#             continue
-#         if word_weight > rand_int:
-#             print(word)
-
 def weighted_freq(word_list):
-    # This function essentially generates the weights or the relative frequency of the elements passed in as the text
+#gives the frequency percentage of the words in decimal form
     wf_dict = {}
     sum_values = sum(histogram(word_list).values())
     for word in word_list:
         word_count = word_list.count(word)
-        weighted_word_count = word_count / sum_values
-        wf_dict[word] = weighted_word_count
+        dec_weighted_word_count = word_count / sum_values
+        percent_weighted_word_count = dec_weighted_word_count * 100
+        wf_dict[word] = percent_weighted_word_count
     return wf_dict
+
+# def word_choice(weighted_freq, word_list):
+#     if wf_dict.values() < random.randint(0, 100):
+#         pass
+#     if wf_dict.keys() > random.randint(0, 100): 
+#             print(wf_dict[word])
  
 if __name__ == "__main__":
     #hard-coded text file !!!!#make a fucntion that takes a file name argument
@@ -72,12 +66,15 @@ if __name__ == "__main__":
 
     text_weighted_freq = weighted_freq(text_word_list)
     print(text_weighted_freq)
+
+    # text_word_choice = word_choice(text_weighted_freq, text_word_list)
+    # print(text_word_choice)
     
 
 
 
-    #print statement test to make sure it works
-    #print('Histogram:\t', text_histogram, '\n\n')
+#print statement test to make sure it works
+#print('Histogram:\t', text_histogram, '\n\n')
 #print('Num of Unique_Words:\t', unique_words(text_histogram), '\n')
 #print('"and" occurs:\t', frequency('and', text_histogram), 'times \n')
 #print('"red" occurs:\t', frequency('red', text_histogram), 'times \n')
@@ -85,4 +82,4 @@ if __name__ == "__main__":
 #print("A random word from this histogram is", random_word(text_histogram))
 #print("Another random word from this histogram is", random_word(text_histogram))
 
-    #print("This is a weighted random word", weighted_freq(text_histogram, text_word_list))
+#print("This is a weighted random word", weighted_freq(text_histogram, text_word_list))

@@ -19,7 +19,7 @@ def lol():
     else:
       rand_sentence += (histogram.random_word(text_histogram) + " ")
       print (rand_sentence)
-  return histogram.weighted_freq(text_word_list)
+  return histogram.random_word(rand_sentence)
 
 if __name__ == '__main__':
     app.run()
