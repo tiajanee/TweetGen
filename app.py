@@ -1,5 +1,6 @@
 from flask import Flask
 import histogram
+import random
 
 app = Flask(__name__)
 
