@@ -14,18 +14,31 @@ class Dictogram(dict):
         if word_list is not None:
             for word in word_list:
                 self.add_count(word)
+                self.types += 1
 
     def add_count(self, word, count=1):
         """Increase frequency count of given word by given count amount."""
         # TODO: Increase word frequency by count
+        search = re.compile('\w+')
+        histogram = {}  
+ 
+        for word in word_list:
+            if search.match(word) is None:
+                continue
+
+            if word not in histogram:
+                histogram.update({word: 0})
+ 
+        histogram[word] += 1
+        self.tokens += 1
 
     def frequency(self, word):
         """Return frequency count of given word, or 0 if word is not found."""
         # TODO: Retrieve word frequency count
-        if word not in Dictogram:
+        if word not in histogram:
          return 0
     
-    return Dictogram[word]
+        return histogram[word]
 
 
 
@@ -39,6 +52,7 @@ def print_histogram(word_list):
         freq = histogram.frequency(word)
         print('{!r} occurs {} times'.format(word, freq))
     print()
+
 
 
 def main():
@@ -58,6 +72,13 @@ def main():
         woodchuck_text = ('how much wood would a wood chuck chuck'
                           ' if a wood chuck could chuck wood')
         print_histogram(woodchuck_text.split())
+
+    text_file = open('fish.txt')
+    #splits words in file into lines and make the all lower case for the unique_words() function
+    text_word_list = [word.lower() for word in text_file.read().rsplit()]
+    #saves histogram in a variable
+    text_histogram = histogram(text_word_list)
+    print(text_histogram)
 
 
 if __name__ == '__main__':
