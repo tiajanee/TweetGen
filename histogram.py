@@ -33,9 +33,9 @@ def frequency(word, histogram):
 def random_word(histogram):       
 
     rand_word =  random.choice(list(histogram.keys()))
-    #rand_number = random.randint(0, 15))
-        #for i in range(rand_number):
-        #rand_sentence += (rand_word)
+    # rand_number = random.randint(0, 15)
+    #     for i in range(rand_number):
+    #     rand_sentence += (rand_word)
     return rand_word
 
 def weighted_freq(word_list):
@@ -79,7 +79,7 @@ if __name__ == "__main__":
 #print('"and" occurs:\t', frequency('and', text_histogram), 'times \n')
 #print('"red" occurs:\t', frequency('red', text_histogram), 'times \n')
 #print('"he" occurs:\t', frequency('he', text_histogram), 'times \n')
-#print("A random word from this histogram is", random_word(text_histogram))
+print("A random word from this histogram is", random_word(text_histogram))
 #print("Another random word from this histogram is", random_word(text_histogram))
 
 #print("This is a weighted random word", weighted_freq(text_histogram, text_word_list))
