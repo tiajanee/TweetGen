@@ -50,14 +50,28 @@ def random_word(histogram):
 #             continue
 #         if word_weight > rand_int:
 #             print(word)
+
+def weighted_freq(word_list):
+    # This function essentially generates the weights or the relative frequency of the elements passed in as the text
+    wf_dict = {}
+    sum_values = sum(histogram(word_list).values())
+    for word in word_list:
+        word_count = word_list.count(word)
+        weighted_word_count = word_count / sum_values
+        wf_dict[word] = weighted_word_count
+    return wf_dict
  
 if __name__ == "__main__":
     #hard-coded text file !!!!#make a fucntion that takes a file name argument
-    text_file = open('practice_text.txt')
+    text_file = open('fish.txt')
     #splits words in file into lines and make the all lower case for the unique_words() function
     text_word_list = [word.lower() for word in text_file.read().rsplit()]
     #saves histogram in a variable
     text_histogram = histogram(text_word_list)
+    print(text_histogram)
+
+    text_weighted_freq = weighted_freq(text_word_list)
+    print(text_weighted_freq)
     
 
 
