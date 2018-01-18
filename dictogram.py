@@ -1,5 +1,5 @@
 from __future__ import division, print_function  # Python 2 and 3 compatibility
-
+import re
 
 class Dictogram(dict):
     """Dictogram is a histogram implemented as a subclass of the dict type."""
@@ -19,15 +19,14 @@ class Dictogram(dict):
     def add_count(self, word, count=1):
         """Increase frequency count of given word by given count amount."""
         # TODO: Increase word frequency by count
-        search = re.compile('\w+')
-        histogram = {}  
- 
+        #search = re.compile('\w+')  
         for word in word_list:
-            if search.match(word) is None:
+            if self.add_count is None:
                 continue
 
             if word not in histogram:
-                histogram.update({word: 0})
+                self.add_count(word)
+                self.types += 1
  
         histogram[word] += 1
         self.tokens += 1
@@ -38,7 +37,7 @@ class Dictogram(dict):
         if word not in histogram:
          return 0
     
-        return histogram[word]
+        return self.word
 
 
 

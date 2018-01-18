@@ -61,7 +61,7 @@ def weighted_freq(word_list):
  
 if __name__ == "__main__":
     #hard-coded text file !!!!#make a fucntion that takes a file name argument
-    text_file = open('fish.txt')
+    text_file = open('practice.txt')
     #splits words in file into lines and make the all lower case for the unique_words() function
     text_word_list = [word.lower() for word in text_file.read().rsplit()]
     #saves histogram in a variable
